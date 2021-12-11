@@ -31,5 +31,5 @@ CREATE TRIGGER [HumanResources].[dEmployee] ON [HumanResources].[Employee]
 				END
 			END;
 		END;
--- yek employee az humanresources.employee delete kon ta peygham ro neshoon bede
--- bad begoo role back mikone
+-- delete a employee record from humanresources.employee to see the error message
+-- then it rolls back :)

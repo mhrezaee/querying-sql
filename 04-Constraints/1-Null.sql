@@ -1,7 +1,7 @@
 -- script employee table as drop and create to :)
 USE [DemoDb]
 GO
--- th IF line is added by me , 
+-- the IF line , 
 IF EXISTS ( SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[Employees]') AND OBJECTPROPERTY(id,N'IsUserTable') = 1)
 
 DROP TABLE [dbo].[Employees]
@@ -20,7 +20,7 @@ CREATE TABLE [dbo].[Employees](
 
 GO
 
--- th IF line is added by me , 
+-- the IF line 
 IF EXISTS ( SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[Products]') AND OBJECTPROPERTY(id,N'IsUserTable') = 1)
 
 DROP TABLE [dbo].[Products]
@@ -35,7 +35,7 @@ CREATE TABLE [dbo].[Products](
 
 GO
 
--- th IF line is added by me ,
+-- the IF line
 IF EXISTS ( SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[Sales]') AND OBJECTPROPERTY(id,N'IsUserTable') = 1)
 
 DROP TABLE [dbo].[Sales]

@@ -2,7 +2,7 @@
 USE [DemoDb]
 GO
 
--- th IF line is added by me , 
+-- the IF line, 
 IF EXISTS ( SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[Employees]') AND OBJECTPROPERTY(id,N'IsUserTable') = 1)
 
 DROP TABLE [dbo].[Employees]
@@ -15,13 +15,13 @@ CREATE TABLE [dbo].[Employees](
 	[LastName] [nvarchar](75) NOT NULL,
 	[Title] [nvarchar](100) NULL DEFAULT('New Hire'),
 	[HireDate] [datetime] NOT NULL CONSTRAINT DF_HireDate DEFAULT(GETDATE()), -- this line added :)
-	[VacationHours] [smallint] NOT NULL DEFAULT (0), -- sql server name this constraint automtically, this line added by me :)
+	[VacationHours] [smallint] NOT NULL DEFAULT (0), -- sql server name this constraint automtically :)
 	[Salary] [decimal](19, 4) NOT NULL
 ) ON [PRIMARY]
 
 GO
 
--- th IF line is added by me , 
+-- the IF line, 
 IF EXISTS ( SELECT * FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[Products]') AND OBJECTPROPERTY(id,N'IsUserTable') = 1)
 
 DROP TABLE [dbo].[Products]
@@ -29,10 +29,10 @@ GO
 
 -- create products table with null / not null and default constraint 
 CREATE TABLE [dbo].[Products](
-	[Id] [int] NOT NULL IDENTITY(1,1), -- identity added by me
+	[Id] [int] NOT NULL IDENTITY(1,1), -- identity added
 	[Name] [nvarchar](200) NOT NULL,
 	[Price] [decimal](19, 4) NOT NULL,
-	[DisContinuedFlag] [bit] NOT NULL CONSTRAINT DF_DiscontinuedFlag DEFAULT(0) -- added by me
+	[DisContinuedFlag] [bit] NOT NULL CONSTRAINT DF_DiscontinuedFlag DEFAULT(0) -- this line is added
 ) ON [PRIMARY]
 
 GO
@@ -44,7 +44,7 @@ DROP TABLE [dbo].[Sales]
 GO
 -- create sales table with null / not null and default constarintsw
 CREATE TABLE [dbo].[Sales](
-	[Id] [uniqueidentifier] NOT NULL DEFAULT NEWID(), -- added by me
+	[Id] [uniqueidentifier] NOT NULL DEFAULT NEWID(), -- this line added
 	[ProductId] [int] NOT NULL,
 	[EmployeeId] [int] NOT NULL,
 	[Quantity] [smallint] NOT NULL,
@@ -53,5 +53,5 @@ CREATE TABLE [dbo].[Sales](
 
 GO
 SELECT NEWID()
--- chon ye View behesh set shode nemizare run she in , view ro delete kon :D
--- sepas jadvale Sales ro edit top 200 kon va 3 meghdare vasat ro 1 meghdar dehi kon va hit execute kon (Ctrl + R) ta mghadire default ro khdoesh meghdar dehi kone ;)
+--because one View is set to this, it will not created , please delete the view first :D
+-- the right click on Sales table and click on edit top 200 rows, and make 3 data inside it to 1 and hit execute then (Ctrl + R) to see the default value added by default ;)

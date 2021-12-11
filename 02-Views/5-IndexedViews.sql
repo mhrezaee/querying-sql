@@ -5,7 +5,7 @@ GO
 CREATE VIEW dbo.vEmployeeSaleOrders
 	WITH SCHEMABINDING
 AS
-	SELECT Employees.Id as eID, -- be khhatere inke esmme har column bayad unique bashe
+	SELECT Employees.Id as eID, -- because column name should be unique
 			Products.Id,
 			SUM(Price*Quantity) as SaleTotal,
 			SaleDate
@@ -26,7 +26,7 @@ GO
 ALTER VIEW dbo.vEmployeeSaleOrders
 	WITH SCHEMABINDING
 AS
-	SELECT Employees.Id as eID, -- be khhatere inke esmme har column bayad unique bashe
+	SELECT Employees.Id as eID, -- because column name should be unique
 			Products.Id,
 			SUM(Price*Quantity) as SaleTotal,
 			SaleDate,

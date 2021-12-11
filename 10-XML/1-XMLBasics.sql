@@ -59,7 +59,7 @@ GO
 DECLARE @xmlData XML
 SELECT @xmlData = CAST(BulkColumn AS XML)
  FROM OPENROWSET
- (BULK N'C:\Users\Hadi Rezaee\Documents\SQL Server Management Studio\70-461 Querying SQL2012\10-XML\EmployeeBio.xml',
+ (BULK N'C:path to xml file\EmployeeBio.xml',
 	 SINGLE_BLOB) as x
 SELECT @xmlData
 

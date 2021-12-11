@@ -41,14 +41,14 @@ DROP TABLE [dbo].[Sales]
 GO
 CREATE TABLE [dbo].[Sales](
 	[Id] [uniqueidentifier] NOT NULL DEFAULT NEWID(),
-	[ProductId] [int] NOT NULL REFERENCES Products(Id), -- added by me :)
+	[ProductId] [int] NOT NULL REFERENCES Products(Id), -- :)
 	[EmployeeId] [int] NOT NULL,
 	[Quantity] [smallint] NOT NULL,
 	[SaleDate] [date] NULL CONSTRAINT DF_SaleDate DEFAULT (GETDATE()),
 	CONSTRAINT CHK_QuantitySaleDate CHECK(Quantity > 0 AND DATEDIFF(d,GETDATE(),SaleDate) <= 0),
 	CONSTRAINT PK_SaleId PRIMARY KEY CLUSTERED(Id ASC) 
 		WITH (IGNORE_DUP_KEY = OFF),
-		CONSTRAINT FK_EmployeesSales FOREIGN KEY (EmployeeId) REFERENCES dbo.Employees(Id), -- raveshe dovome ezafe kardane kelide khareji
+		CONSTRAINT FK_EmployeesSales FOREIGN KEY (EmployeeId) REFERENCES dbo.Employees(Id), -- second method for adding Foreign Key
 ) ON [PRIMARY]
 
 GO

@@ -35,7 +35,7 @@ GO
 --Basic GROUPING SETS
 SELECT EmployeeId, SUM(Quantity) AS QuantitySold 
 FROM dbo.Sales
-GROUP BY GROUPING SETS ((EmployeeId), ()) -- () yani majmoo ro dar akhar biar !
+GROUP BY GROUPING SETS ((EmployeeId), ()) -- () means give the total at last !
 GO
 
 --Basic GROUPING SETS with multiple groups
@@ -53,8 +53,8 @@ SELECT
 	SUM(Quantity) AS QuntitySold 
 FROM dbo.Sales
 GROUP BY GROUPING SETS ((EmployeeId, DATEPART(yyyy,SaleDate)) , (EmployeeId))
--- GROUP BY GROUPING SETS ((EmployeeId, DATEPART(yyyy,SaleDate)) , (EmployeeId) , ()) in ham mishe
--- Tip: akhare har employee ye NULL be harahe majmooe forooshesh miare :)
+-- GROUP BY GROUPING SETS ((EmployeeId, DATEPART(yyyy,SaleDate)) , (EmployeeId) , ()) it is also possible
+-- Tip: end of each employee it will add a NULL plus total of sales :)
 GO
 
 --GROUPING SET with multiple groups and multiple aggregations
@@ -70,7 +70,7 @@ GROUP BY GROUPING SETS (
 							(EmployeeId),
 							()
 						)
--- tip: akhre har mah , har sal total darim :)
+-- tip: end of each month, year we have the total :)
 GO
 
 --GROUPING SET with unrelated aggregations

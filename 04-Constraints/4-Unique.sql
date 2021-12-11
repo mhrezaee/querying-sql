@@ -15,7 +15,7 @@ CREATE TABLE [dbo].[Employees](
 	[HireDate] [datetime] NOT NULL CONSTRAINT DF_HireDate DEFAULT(GETDATE()) CHECK(DATEDIFF(d,GETDATE(),HireDate) <=0),
 	[VacationHours] [smallint] NOT NULL DEFAULT (0),
 	[Salary] [decimal](19, 4) NOT NULL,
-	CONSTRAINT U_Employeee UNIQUE NONCLUSTERED(FirstName,LastName,HireDate) -- added by me , baraye jologiri az inke mesle ham vojod dashte bashan :)
+	CONSTRAINT U_Employeee UNIQUE NONCLUSTERED(FirstName,LastName,HireDate) -- to ignore duplicate same data :)
 ) ON [PRIMARY]
 
 GO
@@ -27,7 +27,7 @@ GO
 
 CREATE TABLE [dbo].[Products](
 	[Id] [int] NOT NULL IDENTITY(1,1),
-	[Name] [nvarchar](200) NOT NULL UNIQUE NONCLUSTERED, -- added by me
+	[Name] [nvarchar](200) NOT NULL UNIQUE NONCLUSTERED, -- this one
 	[Price] [decimal](19, 4) NOT NULL CONSTRAINT CHK_Price CHECK(Price > 0),
 	[DisContinuedFlag] [bit] NOT NULL CONSTRAINT DF_DiscontinuedFlag DEFAULT(0)
 ) ON [PRIMARY]

@@ -12,7 +12,7 @@ CREATE TABLE [dbo].[Employees](
 	[MiddleName] [nvarchar](50) NULL,
 	[LastName] [nvarchar](75) NOT NULL,
 	[Title] [nvarchar](100) NULL DEFAULT('New Hire'),
-	[HireDate] [datetime] NOT NULL CONSTRAINT DF_HireDate DEFAULT(GETDATE()) CHECK(DATEDIFF(d,GETDATE(),HireDate) <= 0), -- check part added by me
+	[HireDate] [datetime] NOT NULL CONSTRAINT DF_HireDate DEFAULT(GETDATE()) CHECK(DATEDIFF(d,GETDATE(),HireDate) <= 0), -- check part
 	[VacationHours] [smallint] NOT NULL DEFAULT (0),
 	[Salary] [decimal](19, 4) NOT NULL
 ) ON [PRIMARY]
@@ -27,7 +27,7 @@ GO
 CREATE TABLE [dbo].[Products](
 	[Id] [int] NOT NULL IDENTITY(1,1),
 	[Name] [nvarchar](200) NOT NULL,
-	[Price] [decimal](19, 4) NOT NULL CONSTRAINT CHK_Price CHECK(Price > 0), -- added by me :)
+	[Price] [decimal](19, 4) NOT NULL CONSTRAINT CHK_Price CHECK(Price > 0), -- check added :)
 	[DisContinuedFlag] [bit] NOT NULL CONSTRAINT DF_DiscontinuedFlag DEFAULT(0)
 ) ON [PRIMARY]
 
@@ -43,7 +43,7 @@ CREATE TABLE [dbo].[Sales](
 	[EmployeeId] [int] NOT NULL,
 	[Quantity] [smallint] NOT NULL,
 	[SaleDate] [date] NULL CONSTRAINT DF_SaleDate DEFAULT (GETDATE()),
-	CONSTRAINT CHK_QuantitySaleDate CHECK(Quantity > 0 AND DATEDIFF(d,GETDATE(),SaleDate) <= 0) -- this line added by me
+	CONSTRAINT CHK_QuantitySaleDate CHECK(Quantity > 0 AND DATEDIFF(d,GETDATE(),SaleDate) <= 0) -- this line changed :)
 ) ON [PRIMARY]
 
 GO

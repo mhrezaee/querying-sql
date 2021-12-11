@@ -25,7 +25,7 @@ EXECUTE msdb.dbo.sysmail_add_account_sp
 		@account_name = 'Gmail',
 		@description = 'account for outgoing notifications',
 		@email_address ='mymail@gmail.com',
-		@display_name='70-461 Triggers',
+		@display_name='Some! Triggers',
 		@mailserver_name='smtp.gmail.com',
 		@port =587,
 		@enable_ssl =1,

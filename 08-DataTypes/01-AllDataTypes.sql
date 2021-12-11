@@ -75,17 +75,17 @@ VALUES  (
           'up to 2 GB of data' , -- text - text
 
 		  --unicode character data
-          N'Úáí' , -- nchar - nchar(3)
-          N'ãÍãÏ ÑÖÇ' , -- nvarchar - nvarchar(10)
-          N'í˜ Ìãáå ÈÒÑ' , -- nvarcharMAX - nvarchar(max)
-          N'í˜ Ìãáå Îíáí ÈÒÑ' , -- ntext - ntext
+          N'ï¿½ï¿½ï¿½' , -- nchar - nchar(3)
+          N'ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½' , -- nvarchar - nvarchar(10)
+          N'ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ñ' , -- nvarcharMAX - nvarchar(max)
+          N'ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ñ' , -- ntext - ntext
 
 		  --binar data
           0 , -- bit - bit
           CAST('ABC' AS BINARY) , -- binary - binary
           CAST('Varying' AS VARBINARY(10)) , -- varbinary - varbinary(10)
           CAST('max of 2GB varbinary(binarying)' AS VARBINARY(max)) , -- varbinaryMAX - varbinary(max)
-          (SELECT * FROM OPENROWSET(BULK 'C:\Users\Hadi Rezaee\Documents\SQL Server Management Studio\70-461 Querying SQL2012\08-DataTypes\ff.jpg', SINGLE_BLOB) i) , -- image - image
+          (SELECT * FROM OPENROWSET(BULK 'C:\path to an image.jpg', SINGLE_BLOB) i) , -- image - image
 
 		  --numeric data
           255 , -- tinyint - tinyint

@@ -1,11 +1,11 @@
 
--- in ghesmat dar execute sherkat nakonad
--- faghat braye tozihate ast
+-- do not execute it
+-- just for explanation
 USE DemoDb
 
 GO
 -- add constraint
--- no check baraye inke dade haye ghabli ke dar jadavel vojood dasht moshkeli pish nayad estefade mishe
+-- we use nocheck to not make problem for data already inside the table.
 
 ALTER TABLE dbo.Sales WITH NOCHECK
 	ADD CONSTRAINT FK_EmployeesSales FOREIGN KEY (EmployeeId)

@@ -36,7 +36,7 @@ SELECT * FROM vEmployees
 
 GO
 
-INSERT vEmployees SELECT 3,'Hadi',NULL,'Rezaee','Trainer','1/1/2010',80,'100000.00' -- becuse chek option do not allow to insert
+INSERT vEmployees SELECT 3,'Hadi',NULL,'Rezaee','Trainer','1/1/2010',80,'100000.00' -- becuse check option do not allow to insert
 INSERT vEmployees SELECT 4,'Garth',NULL,'Schulte','Sales Person','1/1/2010',80,'100000.00'
 GO
 

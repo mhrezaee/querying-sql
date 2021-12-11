@@ -61,7 +61,7 @@ GO
 
 -- to enable and disable nested triggers
 
-sp_configure 'nested_triggers', 0 -- baraye enable kardan be jaye 0 , 1 migozarim 
+sp_configure 'nested_triggers', 0 -- for enabling instead of 0 , wirte 1 :) 
 GO
 RECONFIGURE
 GO

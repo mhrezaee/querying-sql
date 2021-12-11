@@ -30,7 +30,7 @@ CREATE TABLE [dbo].[Products](
 	[Name] [nvarchar](200) NOT NULL UNIQUE NONCLUSTERED,
 	[Price] [decimal](19, 4) NOT NULL CONSTRAINT CHK_Price CHECK(Price > 0),
 	[DisContinuedFlag] [bit] NOT NULL CONSTRAINT DF_DiscontinuedFlag DEFAULT(0),
-	CONSTRAINT PK_ProductId PRIMARY KEY CLUSTERED(Id ASC) -- raveshe dovome sakhte primary key (daghighan mesle jadvale balaei ast
+	CONSTRAINT PK_ProductId PRIMARY KEY CLUSTERED(Id ASC) -- second way to creaete Primary key, it is exactly the table above.
 ) ON [PRIMARY]
 
 GO
@@ -46,9 +46,9 @@ CREATE TABLE [dbo].[Sales](
 	[Quantity] [smallint] NOT NULL,
 	[SaleDate] [date] NULL CONSTRAINT DF_SaleDate DEFAULT (GETDATE()),
 	CONSTRAINT CHK_QuantitySaleDate CHECK(Quantity > 0 AND DATEDIFF(d,GETDATE(),SaleDate) <= 0),
-	CONSTRAINT PK_SaleId PRIMARY KEY CLUSTERED(Id ASC)  -- 2 line :D added by me 
-		WITH (IGNORE_DUP_KEY = OFF) -- braye jologiri az voroode mavarede tekrari, added by me,
-		-- baraye ezafe kardane option haye digar az Comma(,) stefade mishe
+	CONSTRAINT PK_SaleId PRIMARY KEY CLUSTERED(Id ASC)  -- these 2 line :D  
+		WITH (IGNORE_DUP_KEY = OFF) -- for ignoring adding duplicates,
+		-- for adding other options use comma (,)
 ) ON [PRIMARY]
 SELECT NEWID()
 GO

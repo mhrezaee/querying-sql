@@ -1,7 +1,7 @@
 USE [DemoDb]
 GO
 
-/* code added by me : add a comma and encryprion near schemabinding*/
+/* add a comma and encryprion near schemabinding*/
 SET ANSI_NULLS ON
 GO
 
@@ -10,9 +10,9 @@ GO
 
 
 ALTER VIEW [dbo].[vEmployeeSaleOrders]
-	WITH SCHEMABINDING , ENCRYPTION -- this encryption added by me :D
+	WITH SCHEMABINDING , ENCRYPTION -- this encryption 
 AS
-	SELECT Employees.Id as eID, -- be khhatere inke esmme har column bayad unique bashe
+	SELECT Employees.Id as eID, -- because column name should be unique
 			Products.Id,
 			SUM(Price*Quantity) as SaleTotal,
 			SaleDate,

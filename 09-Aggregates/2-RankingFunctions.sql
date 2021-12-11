@@ -12,8 +12,8 @@ SELECT
 FROM dbo.Sales AS s
 GROUP BY EmployeeId, ProductId
 /* Tip:
-	RANK: age 2 meghdar barabar bashan masalan minevise 7 , 7 , badi mishe 9
-Dens_RANK: age 2 meghdar barabar bashan masalan minevise 7 , 7 , badi mishe 8
+	RANK: if 2 vaues are equal for example it writes 7 , 7 , then next would be 9
+Dens_RANK: if 2 values are equal it for example will write 7 , 7 , the next will be 8
 */
 GO
 

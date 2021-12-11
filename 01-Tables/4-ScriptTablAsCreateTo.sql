@@ -3,21 +3,21 @@ GO
 
 SET ANSI_NULLS ON
 GO
--- begin code added by me for proofing ansi standard null ON and OFF
+-- begin code, for proofing ansi standard null ON and OFF
 IF NULL = NULL
 	PRINT 'yes ... null = null'
 ELSE
 	PRINT 'no ... null <> null'
-	-- end code added by me
+	-- end code
 
 SET QUOTED_IDENTIFIER ON
 GO
--- added code by me to proof Quoted Identifier On And Off
+-- proof Quoted Identifier On And Off
 CREATE TABLE "SELECT"
 (
 	Id	INT  NOT NULL
 )
--- end of code added by me
+-- end of code
 GO
 CREATE TABLE [dbo].[Employees](
 	[Id] [int] NOT NULL,
