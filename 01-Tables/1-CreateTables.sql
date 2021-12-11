@@ -1,0 +1,40 @@
+CREATE DATABASE DemoDb
+
+GO
+
+
+USE DemoDb
+GO
+
+CREATE TABLE Employees
+(
+	Id				INT					NOT NULL,
+	FirstName		NVARCHAR(50)		NOT NULL,
+	MiddleName		NVARCHAR(50)		NULL,
+	LastName		NVARCHAR(75)		NOT NULL,
+	Title			NVARCHAR(100)		NULL,
+	HireDate		DATETIME			NOT NULL,
+	VacationHours	SMALLINT			NOT NULL,
+	Salary			DECIMAL(19,4)		NOT NULL
+)
+
+GO
+
+CREATE TABLE Products
+(
+	Id				INT					NOT NULL,
+	Name			NVARCHAR(200)		NOT NULL,
+	Price			DECIMAL(19,4)		NOT NULL
+)
+
+GO
+
+CREATE TABLE Sales
+(
+	Id				UNIQUEIDENTIFIER	NOT NULL,
+	ProductId		INT					NOT NULL,
+	EmployeeId		INT					NOT NULL,
+	Quantity		SMALLINT			NOT NULL,
+	SaleDate		DATETIME			NULL
+)
+GO

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0"?>
+<EmployeeBio EmployeeId ="4">
+	<BirthPlace>Unknown</BirthPlace>
+	<Residence>Jedi High Council</Residence>
+	<Side>Light</Side>
+	<Appearances>
+		<Appearance Name="The Phantom Menace" />
+		<Appearance Name="Attack of the Clones" />
+		<Appearance Name="Revenge of the Sith" />
+		<Appearance Name="The Empire Strikes Back" />
+		<Appearance Name="Return of the Jedi" />
+	</Appearances>
+</EmployeeBio>
