@@ -6,7 +6,7 @@ GO
 IF OBJECT_ID('iProductNotification', 'TR') IS NOT NULL
 		DROP TRIGGER dbo.iProductNotification
 GO
-IF OBJECT_ID('asghar' , 'V') IS NOT NULL
+IF OBJECT_ID('Employees' , 'U') IS NOT NULL
 		PRINT 'yes there is a table named Employees'
 		ELSE PRINT 'no srry'
 --Using OBJECTPROPERTY with OBJECT_ID metadata function
